@@ -25,3 +25,15 @@ class Galeria:
                         self.nacionalidades.append(fila[0].strip())
         except:
             print("No se pudo cargar el archivo de nacionalidades.")
+    
+    #Filtra obras por nombre exacto del artista
+    def filtrar_obras_por_nombre_artista(self, nombre):
+        for obra in self.obras:
+            if obra.artista.nombre.lower() == nombre.lower():
+                obra.mostrar_info_basica()
+
+    #Filtra obras que tengan imagen disponible
+    def obras_con_imagen(self):
+        for obra in self.obras:
+            if obra.imagen_url != "No tiene ":
+                obra.mostrar_info_basica()
