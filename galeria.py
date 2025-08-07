@@ -22,3 +22,28 @@
                 break
             else:
                 print("Opción inválida. Intente de nuevo.")
+
+#Muestra los departamentos del museo y permite buscar obras por ID de departamento.
+    def buscar_por_departamento(self):
+        print("\nBuscando departamentos...")
+        url = "https://collectionapi.metmuseum.org/public/collection/v1/departments"
+        r = requests.get(url)
+        try:
+            datos = r.json()
+        except:
+            print("No se pudo obtener la lista de departamentos.")
+            return
+
+        self.departamentos = datos["departments"]
+        for depto in self.departamentos:
+            print(f"{depto['departmentId']}: {depto['displayName']}")
+
+        depto_id = input("Ingrese el ID del departamento: ")
+        if not depto_id.isdigit():
+            print("ID inválido.")
+            return
+
+        url_busqueda = f"https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds={depto_id}"
+        self._buscar_y_mostrar_obras(url_busqueda)
+
+    
