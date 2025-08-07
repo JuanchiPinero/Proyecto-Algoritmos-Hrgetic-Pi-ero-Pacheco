@@ -20,3 +20,7 @@ class Obra:
         print(f"Año de creación: {self.fecha}")
         self.artista.mostrar_info()
         print(f"Imagen URL: {self.imagen_url}")
+
+    #Retorna el nombre del artista asociado a la obra
+    def obtener_nombre_artista(self):
+        return self.artista.nombre
