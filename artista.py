@@ -11,3 +11,7 @@ class Artista:
         print(f"Nacionalidad: {self.nacionalidad}")
         print(f"Fecha de nacimiento: {self.nacimiento}")
         print(f"Fecha de fallecimiento: {self.fallecimiento}")
+
+    #Verifica si el artista tiene nacionalidad conocida
+    def tiene_nacionalidad(self):
+        return self.nacionalidad != "Desconocida"
