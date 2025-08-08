@@ -17,3 +17,9 @@
         for obra in self.obras:
             if obra.es_pintura():
                 obra.mostrar_info_basica()
+
+    #Muestra todas las obras de la galería con imagen disponible
+    def mostrar_obras_con_imagen(self):
+        for obra in self.obras:
+            if obra.tiene_imagen():
+                obra.mostrar_info_basica()
