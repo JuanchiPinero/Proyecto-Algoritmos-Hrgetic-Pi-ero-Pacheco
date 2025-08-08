@@ -37,3 +37,10 @@ class Galeria:
         for obra in self.obras:
             if obra.imagen_url != "No tiene ":
                 obra.mostrar_info_basica()
+            
+    #Muestra las primeras 5 obras registradas en la galería
+    def mostrar_top5_obras(self):
+        for i in range(min(5, len(self.obras))):
+            self.obras[i].mostrar_info_basica()
+
+    
