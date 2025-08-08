@@ -24,3 +24,7 @@ class Obra:
     #Retorna el nombre del artista asociado a la obra
     def obtener_nombre_artista(self):
         return self.artista.nombre
+
+    #Retorna True si la obra tiene imagen disponible
+    def tiene_imagen(self):
+        return self.imagen_url != "No tiene "
