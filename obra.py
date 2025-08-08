@@ -28,3 +28,7 @@ class Obra:
     #Retorna True si la obra tiene imagen disponible
     def tiene_imagen(self):
         return self.imagen_url != "No tiene "
+
+    #Retorna True si el tipo de obra es pintura
+    def es_pintura(self):
+        return "pint" in self.tipo.lower()
