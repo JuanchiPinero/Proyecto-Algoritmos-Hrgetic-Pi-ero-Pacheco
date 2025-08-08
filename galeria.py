@@ -43,4 +43,8 @@ class Galeria:
         for i in range(min(5, len(self.obras))):
             self.obras[i].mostrar_info_basica()
 
+    #Verifica si hay obras registradas antes de mostrar
+    def hay_obras(self):
+        return len(self.obras)>0
+
     
