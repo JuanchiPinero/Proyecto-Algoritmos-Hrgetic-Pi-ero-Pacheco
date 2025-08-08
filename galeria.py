@@ -11,3 +11,9 @@
                 mostrar = input("¿Desea ver la imagen? (s/n): ")
                 if mostrar.lower() == "s":
                     self._mostrar_imagen(obra.imagen_url, obra.id_obra)
+
+    #Filtra y muestra solo las obras que son pinturas
+    def mostrar_solo_pinturas(self):
+        for obra in self.obras:
+            if obra.es_pintura():
+                obra.mostrar_info_basica()
